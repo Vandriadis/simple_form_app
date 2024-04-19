@@ -51,7 +51,11 @@ pub fn handle_form_submission(req: Request) -> Response {
     use title <- result.try(list.key_find(formdata.values, "title"))
     use name <- result.try(list.key_find(formdata.values, "name"))
     let greeting =
-      "Hi, " <> wisp.escape_html(title) <> " " <> wisp.escape_html(name) <> "!"
+      "Hello, "
+      <> wisp.escape_html(title)
+      <> " "
+      <> wisp.escape_html(name)
+      <> "!"
     Ok(greeting)
   }
 
